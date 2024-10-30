@@ -5,26 +5,22 @@ class Counter extends Component {
     count: 0,
     tags: [],
   };
-
-  rederTags() {
-    if (this.state.tags.length == 0) return <p> There is not tags!</p>;
-    return (
-      <ul>
-        {this.state.tags.map((tag) => (
-          <li key={tag}> {tag}</li>
-        ))}
-      </ul>
-    );
-  }
-
   render() {
     return (
-      <React.Fragment>
-        <div>
-          <ul>{this.rederTags()}</ul>
-        </div>
-      </React.Fragment>
+      <div>
+        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
+        <button className="btn btn-secondary btn-sm">Increment</button>
+      </div>
     );
+  }
+  getBadgeClasses() {
+    let classes = "badge m-2 badge-";
+    classes += this.state.count === 0 ? "warning" : "primary";
+    return classes;
+  }
+
+  formatCount() {
+    return this.state.count === 0 ? "zero" : this.state.count;
   }
 }
 
