@@ -6,15 +6,15 @@ class Counter extends Component {
     tags: [],
   };
 
-  constructor() {
-    super();
-    this.handleIncrement = this.handleIncrement.bind(this);
-    console.log("Constructor", this);
-  }
+  //   constructor() {
+  //     super();
+  //     this.handleIncrement = this.handleIncrement.bind(this);
+  //     console.log("Constructor", this);
+  //   }
 
-  handleIncrement() {
+  handleIncrement = () => {
     console.log("Increment Clicked");
-  }
+  };
 
   render() {
     return (
