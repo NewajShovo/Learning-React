@@ -36,6 +36,11 @@ class App extends Component {
     });
     this.setState({ counters });
   };
+
+  componentDidMount() {
+    console.log("App mounted");
+  }
+
   render() {
     return (
       <React.Fragment>
